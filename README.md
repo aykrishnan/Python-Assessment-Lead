@@ -34,7 +34,7 @@ Create a virtual environment with the required Python libraries by running the f
 # Testing
 Run the unit tests as follows:
 
-pytest -vv
+`pytest -vv`
 
 # Task 1
 Implement the base object model classes in _task.py_. Update the _assignment.py_ module as needed to tie it in with the object model.
