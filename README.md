@@ -20,7 +20,7 @@ For locally running tasks, its parameters are fetched from a JSON file. When run
 
 Instructions for each task can be found in this README. Please use best practices when solving these tasks.
 
-This assessment should take around a couple of hours or so to complete, so please timebox your efforts. You should complete at least task #1 and two of the other tasks to demonstrate the generality of the object model. That said, if the object model is well thought out it should be straight forward by design to accomodate additional runtime use cases.
+This assessment should take around an hour or so to complete, so please timebox your efforts. You should complete at least task #1 and two of the other tasks to demonstrate the generality of the object model. That said, if the object model is well thought out it should be straight forward by design to accomodate additional runtime use cases.
 
 # Setup
 Create a virtual environment with the required Python libraries by running the following commands:
