@@ -77,25 +77,4 @@ def batch_environment():
 
 @pytest.fixture
 def lambda_event():
-    return {
-      'Records': [
-        {
-          'EventSource': 'aws:sns',
-          'EventVersion': '1.0',
-          'EventSubscriptionArn': 'arn:aws:sns:us-east-1:123456789012:Foo:a7d72f53-e07f-44bd-aeae-db4787ab5c69',
-          'Sns': {
-            'Type': 'Notification',
-            'MessageId': '807e8cdb-71aa-5bd5-a96c-d5835a102fb4',
-            'TopicArn': 'arn:aws:sns:us-east-1:123456789012:Bar',
-            'Subject': None,
-            'Message': '{"first_name": "Miles", "last_name": "Morales"}',
-            'Timestamp': '2021-07-01T20:45:46.090Z',
-            'SignatureVersion': '1',
-            'Signature': 'ZUwXyamt6MCEpZ3t5CwTU4FAEf1J9XXWLryq7PeLWQLz0tvIA5LvGdeB422XAo5qMUFXI7rhVJCZ+QWEB+OecVQ7w/9CCz/5Bf+VJhWWeW1Ip4UglHoG/kLHQeIxFdKX+GciNLsC0/gFc4uUdps2nl2U0fW2IkI4aKekyfXiFqm5MLpuropI0ss3pek6Qoyqb7zhLbMgVjdQgKJPhMaiAN4+sj9Y7trNOQX6z/WaE05c4JwgQc29zU8pKGXznrN90kHbDnwtspvHOACZf7FKH/kD6k6vjLJgF3b/BMTNAcU1NxTQte2lk1n2DMKnjFXyo6OxWj6ibETgtdq4zpWKkA==',
-            'SigningCertUrl': 'https://sns.us-east-1.amazonaws.com/SimpleNotificationService-12345678901234567890.pem',
-            'UnsubscribeUrl': 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:123456789012:Foo:a7d72f53-e07f-44bd-aeae-db4787ab5c69',
-            'MessageAttributes': {}
-          }
-        }
-      ]
-    }
+    return {"first_name": "Miles", "last_name": "Morales"}
