@@ -1,15 +1,11 @@
-''' Unit tests for the assignment module. '''
 import os
-
 import pytest
-from   tinydb import TinyDB, Query
 
-from   assignment import Widget
+from assignment import Widget
 
 
 def test_widget(widget_parameters):
     task = Widget()
-
     output = task.run(widget_parameters)
 
     assert len(output) == 1
@@ -20,25 +16,27 @@ def test_widget(widget_parameters):
 
 
 def test_widget_runs_locally(local_environment):
-    text = None
-
-    # Run the task as if running locally and retrieve the task output
+    filename = local_environment.get('PARAMETER_FILE')
+    task = Widget()
+    output = task.run_locally(filename)
+    text = output[0].decode()
 
     assert text == "Penny Parker"
 
 
 def test_widget_runs_in_batch(batch_environment):
-    text = None
-
-    # Run the task as if running in AWS Batch and retrieve the task output
+    filename = batch_environment.get('PARAMETER_DATABASE')
+    task = Widget()
+    output = task.run_in_batch(filename)
+    text = output[0].decode()
 
     assert text == "Peter Porker"
 
 
 def test_widget_runs_in_lambda(lambda_event):
-    text = None
-
-    # Run the task as if running in a Lambda function and retrieve the task output
+    task = Widget()
+    output = task.run_from_lambda(lambda_event)
+    text = output[0].decode()
 
     assert text == "Miles Morales"
 

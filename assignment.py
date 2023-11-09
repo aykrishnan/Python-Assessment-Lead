@@ -1,8 +1,11 @@
 # Your imports
-import task
+from task import Task
 
 
-# Make changes to the Widget class as needed
-class Widget:
+class Widget(Task):
+    """
+    Widget task that subclasses Task. Ideally, I would use composition over inheritance (i.e., have Task be a delegate
+    used by the encompassing Widget class). However, for simplicity's sake, I am using inheritance here.
+    """
     def run(self, parameters):
-        return [f'{parameters["first_name"]} {parameters["last_name"]}'.encode()]
+        return super().run(parameters)
